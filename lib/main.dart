@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:random_quote_generator/core/di/service_locator.dart';
 
-void main() {
-  runApp(const MyApp());
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await setupServiceLocator();
+
+  runApp(const RandomQuoteGenerator());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class RandomQuoteGenerator extends StatelessWidget {
+  const RandomQuoteGenerator({super.key});
 
   // This widget is the root of your application.
   @override
